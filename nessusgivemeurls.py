@@ -37,9 +37,10 @@ def extract_www_services(nessus_root):
         for report_item in report_host.findall(".//ReportItem"):
             port = report_item.get('port')
             protocol = report_item.get('protocol')
-            svc_name = report_item.find('svc_name')
-            if svc_name is not None and 'www' in svc_name.text:
-                services.append((host, int(port), protocol, svc_name.text))
+            svc_name = report_item.get('svc_name')
+            if svc_name is not None:
+                if 'www' in svc_name: 
+                    services.append((host, int(port), protocol, svc_name))
     return services
 
 def infer_protocol_and_print_urls(services):
