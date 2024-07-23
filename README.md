@@ -12,10 +12,8 @@ This script processes a Nessus XML file, extracts services that contain "www" in
 
 
 ## Usage
-1. Save the script to a file, for example, `parse_nessus_and_generate_urls.py`.
-2. Ensure you have a valid Nessus XML file, for example, `scan.nessus`.
-3. Run the script using the following command:
+1. Run the script using the following command:
 
 ```bash
-python parse_nessus_and_generate_urls.py scan.nessus > urls_inputforthenexttool.lst
+python nessusgivemeurls.py scan.nessus > urls_inputforthenexttool.lst
 ```
